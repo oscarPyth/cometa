@@ -1,11 +1,13 @@
 import {
-    createBrowserRouter,
-    RouterProvider,
+  createBrowserRouter,
+  RouterProvider,
 } from "react-router-dom";
 import Home from "../pages/Home"
 import Orders from "../pages/Orders";
 import Header from "../components/Header";
 import { Outlet } from 'react-router-dom';
+import GenerateOrder from "../pages/GenerateOrder";
+import React from "react";
 
 const Layout = () => {
   return (
@@ -13,19 +15,15 @@ const Layout = () => {
       <Header />
       <div className="p-7 px-[6vw]">
         <Outlet />
-
       </div>
-      
     </div>
   );
 };
 
-
-
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />, 
+    element: <Layout />,
     children: [
       {
         path: '/',
@@ -35,14 +33,18 @@ const router = createBrowserRouter([
         path: '/orders',
         element: <Orders />,
       },
+      {
+        path: '/generate-order',
+        element: <GenerateOrder />,
+      },
     ],
   },
 ]);
 
 const AppRoutes: React.FC = () => {
   return (
-    
-      <RouterProvider router={router} />
+
+    <RouterProvider router={router} />
   );
 };
 

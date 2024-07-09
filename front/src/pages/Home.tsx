@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useStore } from '../stores/useStore';
 import Table from '../components/Table';
 import CardBeer from '../components/CardBeer';
+import React from 'react';
 
 const Home: React.FC = () => {
   const beers = useStore((state) => state.beers);
@@ -20,7 +21,7 @@ const Home: React.FC = () => {
     getBeers();
     return () => {};
   }, []);
-
+  
   return (
     <>      
       <div className='grid gap-4 grid-cols-6'>

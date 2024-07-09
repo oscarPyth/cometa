@@ -2,6 +2,7 @@ import {useEffect} from 'react';
 import { useStore } from '../stores/useStore';
 import Table from '../components/Table';
 import OrderSummary from '../components/OrderSummary';
+import React from 'react';
 
 
 const Orders: React.FC = () => {

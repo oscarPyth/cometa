@@ -17,9 +17,9 @@ const Receipt: React.FC<ReceiptProps> = ({ items, total, tax, subtotal, tip }) =
   return (
     <div className="bg-white p-6 max-w-sm mx-auto border border-gray-300 shadow-md font-mono text-black">
       <div className="text-center">
-        <h1 className="text-xl font-bold">Pepito's Store</h1>
-        <p>1234 Market St.</p>
-        <p>Anytown, USA 12345</p>
+        <h1 className="text-xl font-bold">Cometa Drinks</h1>
+        <p>Cundinamarca</p>
+        <p>Cajica, Colombia</p>
         <p>Tel: (555) 555-5555</p>
         <hr className="my-2" />
         <p>Date: {new Date().toLocaleDateString()}</p>

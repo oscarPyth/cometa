@@ -1,17 +1,19 @@
 import React from 'react';
-import { useStore } from '../stores/useStore';
 import Button from './Button';
+import logo from '../assets/cometa-drinks-removebg-preview.png';
 
 const Header: React.FC = () => {
-  const count = useStore((state) => state.count);
-  const increaseCount = useStore((state) => state.increaseCount);
-  const resetCount = useStore((state) => state.resetCount);
-
   return (
-    <div className='bg-secondary flex justify-end items-center gap-3 pr-[1rem] shadow-md h-[4rem]'>
-      <Button conf={{path: 'orders', text: 'Ordenes'}}/>
-      <Button conf={{path: '/', text: 'Stock'}}/>
-      <Button mainButton conf={{path: '/', text: 'Generar Orden'}}/>
+    <div className='bg-secondary flex justify-between items-center pr-[1rem] shadow-md h-[4rem]'>
+      <div className='flex-shrink-0 h-full ml-4'>
+        <img src={logo} alt="Descripción de la imagen" className='h-full' />
+      </div>
+
+      <div className='flex gap-3'>
+        <Button conf={{ path: '/', text: 'Stock' }} />
+        <Button conf={{ path: 'orders', text: 'Ordenes' }} />
+        <Button mainButton conf={{ path: '/generate-order', text: 'Generar Orden' }} />
+      </div>
     </div>
   );
 };

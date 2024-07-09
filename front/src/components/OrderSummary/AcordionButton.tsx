@@ -25,10 +25,12 @@ const AccordionButton: React.FC<AccordionButtonProps> = ({ title, beerQuantity, 
                 </div>
             </button>
             {isOpen && (
-                <div className="px-4 py-2 bg-[#FAFDEA] text-[#504c3d] border-t">
-                    <p>Beer Quantity: {beerQuantity}</p>
-                    <p>Beer Type: {beerType}</p>
+                <div className="px-4 py-2 bg-[#FAFDEA] text-[#504c3d] border-t flex items-center gap-4">
+                    <p className="font-semibold">Tipo de cerveza: <span className="font-normal">{beerType}</span></p>
+                    <p className="font-semibold">Cantidad: <span className="font-normal">{beerQuantity}</span></p>
+                    
                 </div>
+              
             )}
         </div>
     );
