@@ -10,6 +10,7 @@ class Beer(Base):
     name: Mapped[str]
     amount: Mapped[int]
     price: Mapped[float]
+    image: Mapped[str]
 
     orders: Mapped[list['Order']] = relationship('Order', back_populates='beer')
 

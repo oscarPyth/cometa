@@ -23,9 +23,16 @@ class ROrder(IOrder):
         )
 
         for order in orders:
-            beer = Beer(id=order.beer.id, quantity=order.beer.amount, name=order.beer.name, price=order.beer.price)
+            beer = Beer(
+                id=order.beer.id,
+                quantity=order.beer.amount,
+                name=order.beer.name,
+                price=order.beer.price,
+                image=order.beer.image
+            )
             round = Round(beer=beer,id=order.id, quantity=order.quantity)
             order_domain.add_round(round)
+        print(order_domain.invoice)
         return order_domain
 
     def get_by_id(self, id: int) -> Order:

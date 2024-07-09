@@ -1,11 +1,16 @@
-import React from 'react';
-import { TableRowProps } from './interfaces';
+import classNames from "classnames";
+import { TableRowProps } from "./interfaces";
 
-const TableRow: React.FC<TableRowProps> = ({ headers, data }) => {
+const TableRow: React.FC<TableRowProps> = ({ headers, data, onClick }) => {
   return (
-    <tr className='my-2'>
+    <tr
+      className={classNames('my-2', { 'cursor-pointer': onClick })}
+      onClick={() => onClick && onClick(data)}
+    >
       {headers.map((header, colIndex) => (
-        <td key={colIndex} className="px-4 py-2 bg-secondary my-3">{data[header.column]}</td>
+        <td key={colIndex} className="px-4 py-2 bg-secondary my-3">
+          {data[header.column]}
+        </td>
       ))}
     </tr>
   );

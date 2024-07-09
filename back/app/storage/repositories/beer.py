@@ -17,7 +17,7 @@ class RBeer(IBeer):
 
     def get_all(self) -> List[Beer]:
         beers = self.session.query(ORMBeer).all()
-        return [Beer(id=beer.id, name=beer.name, price=beer.price, quantity=beer.amount) for beer in beers]
+        return [Beer(id=beer.id, name=beer.name, price=beer.price, quantity=beer.amount,image=beer.image) for beer in beers]
 
     def save(self, entity: Beer) -> None:
         pass

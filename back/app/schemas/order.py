@@ -19,9 +19,9 @@ class OrderBase(BaseModel):
     table_number: int
     created_at: str
     total_price: int
+    total_beers: int
     rounds: List[RoundBase]
-
-
+    invoice: dict
 
     @validator('created_at', pre=True, always=True)
     def format_created_at(cls, v):

@@ -2,7 +2,7 @@ import React from 'react';
 import { TableProps } from './interfaces';
 import TableRow from './TableRow';
 
-const Table: React.FC<TableProps> = ({ headers, data }) => {
+const Table: React.FC<TableProps> = ({ headers, data, onRowClick }) => {
   return (
     <div className="overflow-x-auto rounded">
       <table className="min-w-full border-collapse">
@@ -22,7 +22,7 @@ const Table: React.FC<TableProps> = ({ headers, data }) => {
                   <td colSpan={headers.length}></td>
                 </tr>
               )}
-              <TableRow headers={headers} data={item} />
+              <TableRow headers={headers} data={item} onClick={onRowClick}/>
             </React.Fragment>
           ))}
         </tbody>

@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"  # Cambia el puerto según sea necesario
+    volumes:
+      - ./front:/app
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"  # Cambia el puerto según sea necesario
+    volumes:
+      - ./back:/app
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

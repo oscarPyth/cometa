@@ -1,13 +1,28 @@
 import { create } from 'zustand';
+import { fetchGetBeers, fetchGetOrders, fetchGetRounds } from '../api/apiService'
+import { Beer, AppState, Invoice } from './interfaces';
 
-interface AppState {
-  count: number;
-  increaseCount: () => void;
-  resetCount: () => void;
-}
 
-export const useStore = create<AppState>((set) => ({
-  count: 0,
-  increaseCount: () => set((state) => ({ count: state.count + 1 })),
-  resetCount: () => set({ count: 0 }),
+export const useStore = create<AppState>((set, get) => ({
+  beers: [],
+  beerCard: {},
+  orders: [],
+  rounds: {},
+  invoice: {},
+  getOrders: async () => {
+    let orders = await fetchGetOrders()
+    set({orders: orders})
+  },
+  chooseCard: (beer: Beer) => {
+    set({beerCard: beer})
+  },
+  getBeers: async () => {
+    let beers = await fetchGetBeers()
+    set({beers: beers})
+  },
+  getRounds: async (session_id: string) => {
+    let rounds = await fetchGetRounds(session_id)
+    let { invoice } = rounds
+    set({rounds: rounds, invoice: invoice})
+  }
 }));

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 interface AccordionButtonProps {
     title: string;
-    beerQuantity: string;
+    beerQuantity: number;
     beerType: string;
 }
 

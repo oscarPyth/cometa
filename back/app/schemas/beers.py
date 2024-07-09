@@ -9,3 +9,5 @@ class BeerBase(BaseModel):
 class BeerList(BeerBase):
     id: int
     quantity: int
+    available: bool
+    image: str

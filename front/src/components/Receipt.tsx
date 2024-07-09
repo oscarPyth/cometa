@@ -1,13 +1,11 @@
 import React from 'react';
 
-interface Item {
-  name: string;
-  quantity: number;
-  price: number;
-}
-
 interface ReceiptProps {
-  items: Item[];
+  items: Array<{
+    name: string
+    total_price: number
+    quantity: number
+  }>;
   total: number;
   tax: number;
   subtotal: number;
@@ -15,6 +13,7 @@ interface ReceiptProps {
 }
 
 const Receipt: React.FC<ReceiptProps> = ({ items, total, tax, subtotal, tip }) => {
+  console.log({ items, total, tax, subtotal, tip })
   return (
     <div className="bg-white p-6 max-w-sm mx-auto border border-gray-300 shadow-md font-mono text-black">
       <div className="text-center">
@@ -31,7 +30,7 @@ const Receipt: React.FC<ReceiptProps> = ({ items, total, tax, subtotal, tip }) =
         {items.map((item, index) => (
           <div key={index} className="flex justify-between">
             <span>{item.quantity} x {item.name}</span>
-            <span>${(item.price * item.quantity).toFixed(2)}</span>
+            <span>${(item.total_price).toFixed(2)}</span>
           </div>
         ))}
       </div>
