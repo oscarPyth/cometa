@@ -1,0 +1,11 @@
+FROM node:latest as build
+
+COPY package*.json ./
+
+RUN npm install --legacy-peer-deps
+
+EXPOSE 3000
+
+WORKDIR /app
+
+CMD [ "sh" ]
