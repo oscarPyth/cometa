@@ -1,8 +1,3 @@
-
-interface DataItem {
-  [key: string]: any;
-}
-
 export interface TableData {
     [key: string]: any; 
   }

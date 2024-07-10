@@ -19,9 +19,9 @@ const Orders: React.FC = () => {
   }, []);
 
   const headersOrders = [
-    {name:'Mesa', column:'table_id'}, 
+    {name:'Mesa N°', column:'table_id'}, 
     {name:'Cantidad', column: 'total_beers'},
-    {name:'Precion', column: 'total_price'},
+    {name:'Precio', column: 'total_price'},
   ];
 
   return (

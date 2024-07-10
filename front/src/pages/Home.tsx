@@ -13,7 +13,7 @@ const Home: React.FC = () => {
   const headers = [
     {name:'Producto', column:'name'}, 
     {name:'Cantidad', column: 'quantity'},
-    {name:'Precion', column: 'price'},
+    {name:'Precio', column: 'price'},
     {name:'Disponibilidad', column: 'available'}
   ];
 
