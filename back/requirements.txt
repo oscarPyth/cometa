@@ -1,2 +1,4 @@
 fastapi==0.111.0
 sqlalchemy==2.0.31
+pytest==8.2.2
+pytest-mock==3.14.0

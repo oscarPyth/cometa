@@ -5,7 +5,7 @@ from app.storage.models import Base
 from app.api.v1 import orders
 from fastapi.middleware.cors import CORSMiddleware
 
-Base.metadata.create_all(bind=engine)
+#Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 

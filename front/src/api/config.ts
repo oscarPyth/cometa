@@ -1,7 +1,8 @@
 import axios from 'axios';
-
+const HOST : string | undefined = process.env.REACT_APP_API_URL
+console.log("el hsot es ", HOST)
 const apiClient = axios.create({
-  baseURL: "http://localhost:8000", 
+  baseURL: HOST, 
   headers: {
     'Content-Type': 'application/json',
   }
