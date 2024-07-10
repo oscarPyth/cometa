@@ -7,6 +7,7 @@
 - **Zustand**: Biblioteca para la gestión del estado global en aplicaciones React.
 - **React Router**: Biblioteca para el enrutamiento en aplicaciones React.
 - **Axios**: Cliente HTTP para realizar peticiones a la API.
+- **Tailwind**: Libreria para manejar estilos CSS.
 
 ## Estructura del Proyecto
 

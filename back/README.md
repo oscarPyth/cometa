@@ -6,6 +6,7 @@
 - **SQLAlchemy**: ORM utilizado para la interacción con la base de datos.
 - **Python 3.9**: Lenguaje de programación utilizado.
 - **Pytest**: Framework de pruebas utilizado para asegurar la calidad del código.
+- **SQLite**: Motor de base de datos en memoria.
 
 ## Patrones de Diseño Implementados
 
