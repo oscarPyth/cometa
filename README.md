@@ -15,6 +15,10 @@ Para ejecutar el proyecto utiliza el siguiente comando:
 docker-compose up --build
 ```
 
+una vez arriba los servicios, el back estara expuest en el puerto 8000 y el front en el puert 3000
+si lo desean podran ver la documentacion con Swagger para el back en el url 
+[Swagger](http://localhost:8000/docs)
+
 ## Ejecución de Tests
 
 ### Tests del Front-end
