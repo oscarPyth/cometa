@@ -94,7 +94,7 @@ instance/
 .cache/
 
 # SQLAlchemy
-*.db
+
 *.sqlite3
 
 # VS Code
