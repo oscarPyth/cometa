@@ -1,5 +1,5 @@
 import axios from 'axios';
-const HOST : string | undefined = "https://ec2-54-87-170-124.compute-1.amazonaws.com"
+const HOST : string | undefined = process.env.REACT_APP_API_URL
 console.log("el hsot es ", HOST)
 const apiClient = axios.create({
   baseURL: HOST, 

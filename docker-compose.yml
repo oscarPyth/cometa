@@ -13,6 +13,7 @@ services:
       - app-network
     environment:
       - REACT_APP_API_URL=http://localhost:8000
+    restart: always
 
   backend:
     build:
@@ -24,6 +25,7 @@ services:
       - ./back:/app
     networks:
       - app-network
+    restart: always
 
 networks:
   app-network:
