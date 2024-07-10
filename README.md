@@ -9,7 +9,7 @@ Este repositorio es el resultado de un challenge proporcionado por Cometa Inc. C
 
 ## Ejecución del Proyecto
 
-Para ejecutar el proyecto normalmente, utiliza el siguiente comando:
+Para ejecutar el proyecto utiliza el siguiente comando:
 
 ```sh
 docker-compose up --build
@@ -39,6 +39,4 @@ Para más detalles, consulta los README dentro de las carpetas correspondientes:
 
 - [Front-end](./front/README.md)
 - [Back-end](./back/README.md)
-```
 
-¿Te gustaría que ahora prepare los README para las carpetas `front` y `back`?"
