@@ -9,5 +9,3 @@ class Beer:
     @property
     def available(self):
         return self.quantity > 0
-
-

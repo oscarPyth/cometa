@@ -1,8 +1,8 @@
 from typing import List
 
-from .interfaces import Repository, T
+from .interfaces import Repository
 from app.domain.beer import Beer
-from app.storage.models import Beer as ORMBeer, Table as ORMTable
+from app.storage.models import Beer as ORMBeer
 
 
 class IBeer(Repository[Beer]):
@@ -17,11 +17,19 @@ class RBeer(IBeer):
 
     def get_all(self) -> List[Beer]:
         beers = self.session.query(ORMBeer).all()
-        return [Beer(id=beer.id, name=beer.name, price=beer.price, quantity=beer.amount,image=beer.image) for beer in beers]
+        return [
+            Beer(
+                id=beer.id,
+                name=beer.name,
+                price=beer.price,
+                quantity=beer.amount,
+                image=beer.image,
+            )
+            for beer in beers
+        ]
 
     def save(self, entity: Beer) -> None:
         pass
 
     def delete(self, id: int) -> None:
         pass
-

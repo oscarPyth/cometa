@@ -15,12 +15,25 @@ class Round:
         return int(self.beer.price) * int(self.quantity)
 
     def __str__(self):
-        return self.beer.name + " price " + str(self.total_price) + " " + str(self.quantity) + " " + str(
-            self.beer.price)
+        return (
+            self.beer.name
+            + " price "
+            + str(self.total_price)
+            + " "
+            + str(self.quantity)
+            + " "
+            + str(self.beer.price)
+        )
 
 
 class Order:
-    def __init__(self, id: int, table_number: int, created_at: datetime, rounds: List[Round] = None):
+    def __init__(
+        self,
+        id: int,
+        table_number: int,
+        created_at: datetime,
+        rounds: List[Round] = None,
+    ):
         self.id = id
         self.table_number = table_number
         self.created_at = created_at
@@ -45,8 +58,14 @@ class Order:
                 items[round.beer.name] = {"quantity": 0, "total_price": 0}
             items[round.beer.name]["total_price"] += round.total_price
             items[round.beer.name]["quantity"] += round.quantity
-        items = [{"name": key, "total_price": value["total_price"], "quantity": value["quantity"]} for key, value in
-                 items.items()]
+        items = [
+            {
+                "name": key,
+                "total_price": value["total_price"],
+                "quantity": value["quantity"],
+            }
+            for key, value in items.items()
+        ]
         tax = self.total_price * 0.7
         tip = self.total_price * 0.1
         total = self.total_price + tax + tip
@@ -55,7 +74,6 @@ class Order:
             "tax": tax,
             "tip": tip,
             "total": total,
-            "sub_total": self.total_price
-
+            "sub_total": self.total_price,
         }
         return response

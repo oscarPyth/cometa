@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 from typing import Generic, TypeVar, List
-from app.storage.models import Beer, Table, Order
 
-T = TypeVar('T')
+T = TypeVar("T")
+
 
 class Repository(ABC, Generic[T]):
 

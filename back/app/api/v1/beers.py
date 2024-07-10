@@ -7,7 +7,8 @@ from sqlalchemy.orm import Session
 
 router = APIRouter()
 
-@router.get('/', response_model=List[BeerList])
+
+@router.get("/", response_model=List[BeerList])
 def get_beers(db: Annotated[Session, Depends(get_db)]):
     beer_repository = RBeer(db)
     beers = beer_repository.get_all()
